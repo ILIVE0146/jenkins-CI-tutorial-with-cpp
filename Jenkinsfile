@@ -19,15 +19,15 @@ pipeline {
                 sh "g++ ./tests/client_tester.cpp -o tester.out"
                 sh "echo Testing addition microservice"
                 sh "ls"
-                sh "add.out 33983 &"
-                sh "tester.out 33983 10 5"
+                sh "./add.out 33983 &"
+                sh "./tester.out 33983 10 5"
                 sh "echo Testing multiplication microservice"
-                sh "mul.out 33983 &"
-                sh "tester.out 33983 10 5"
+                sh "./mul.out 33983 &"
+                sh "./tester.out 33983 10 5"
                 sh "echo Testing subtraction microservice"
-                sh "sub.out 33983 &"
-                sh "tester.out 33983 10 5"
-                sh "rm tester.out"
+                sh "./sub.out 33983 &"
+                sh "./tester.out 33983 10 5"
+                sh "rm ./tester.out"
             }
         }
         stage('Publish') {
