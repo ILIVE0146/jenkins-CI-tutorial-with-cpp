@@ -30,7 +30,7 @@ pipeline {
                 sh "rm ./tester.out"
             }
         }
-        stage('Publish') {
+        stage('Archive') {
             steps {
                 sh "zip -r build_Debian *.out"
                 archiveArtifacts artifacts: "build_Debian.zip", fingerprint: true
