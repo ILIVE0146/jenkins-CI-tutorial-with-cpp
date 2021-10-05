@@ -4,9 +4,9 @@ pipeline {
         stage('Build') {
             steps {
                 sh "echo Building..."
-                sh "g++ src/addition.cpp -o add.out"
-                sh "g++ src/multiplication.cpp -o mul.out"
-                sh "g++ src/subtraction.cpp -o sub.out"
+                sh "g++ ./src/addition.cpp -o add.out"
+                sh "g++ ./src/multiplication.cpp -o mul.out"
+                sh "g++ ./src/subtraction.cpp -o sub.out"
                 script {
                     stash includes: "*.out", name: "builds"
                 }
@@ -16,7 +16,7 @@ pipeline {
             steps {
 
                 sh "echo Running tests"
-                sh "g++ tests/client_tester.cpp - o tester.out"
+                sh "g++ ./tests/client_tester.cpp - o tester.out"
                 sh "echo Testing addition microservice"
                 sh "add.out 33983 &"
                 sh "tester.out 33983 10 5"
