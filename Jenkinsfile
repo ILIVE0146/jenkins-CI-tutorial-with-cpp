@@ -18,6 +18,7 @@ pipeline {
                 sh "echo Running tests"
                 sh "g++ ./tests/client_tester.cpp -o tester.out"
                 sh "echo Testing addition microservice"
+                sh "ls"
                 sh "add.out 33983 &"
                 sh "tester.out 33983 10 5"
                 sh "echo Testing multiplication microservice"
