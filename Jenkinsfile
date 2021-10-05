@@ -30,10 +30,10 @@ pipeline {
         stage('Publish') {
             steps {
                 sh "zip -r build_Debian bin/build/*"
-            }
-            archiveArtifacts artifacts: "build_Debian.zip", fingerprint: true
-            script {
-                unstash "builds"
+                archiveArtifacts artifacts: "build_Debian.zip", fingerprint: true
+                script {
+                    unstash "builds"
+                }
             }
         }
     }
