@@ -15,10 +15,6 @@ int main(int argc, char const *argv[])
         std::cerr << "No command line arguments given";
         exit(EXIT_FAILURE);
         break;
-    case 2:
-        std::cerr << "only port is given";
-        exit(EXIT_FAILURE);
-        break;
     default:
         PORT = std::stoi(argv[1]);
         break;

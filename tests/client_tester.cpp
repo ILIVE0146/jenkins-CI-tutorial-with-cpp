@@ -19,10 +19,9 @@ int main(int argc, char const *argv[])
         break;
     default:
         port = std::stoi(argv[1]);
-        std::cout << port << std::endl;
         break;
     }
-    std::cout << "number of command line arguments: " << argc << std::endl;
+    std::cout << "number of command line arguments: " << argc - 1 << std::endl;
     int sock = 0, valread;
     struct sockaddr_in serv_addr;
     std::string messageToSend = "";
